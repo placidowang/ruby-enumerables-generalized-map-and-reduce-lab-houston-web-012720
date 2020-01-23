@@ -12,6 +12,8 @@ end
 # p map([1, 2, 3, -9]){|n| n * -1}
 
 def reduce(array, starting_value = nil)
+  accumulator = starting_value || array[0]
+  
   accumulator = array[0]
   i = 1
     
