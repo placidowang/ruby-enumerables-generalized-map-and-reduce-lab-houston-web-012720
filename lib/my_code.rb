@@ -14,13 +14,13 @@ end
 def reduce(array, starting_value = nil)
   accumulator = starting_value || array[0]
   
-  accumulator = array[0]
-  i = 1
+  # accumulator = array[0]
+  # i = 1
     
-  if starting_value
-    accumulator = starting_value
-    i = 0
-  end
+  # if starting_value
+  #   accumulator = starting_value
+  #   i = 0
+  # end
   
   while i < array.length do
     element = array[i]
