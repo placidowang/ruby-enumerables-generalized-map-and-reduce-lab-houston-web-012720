@@ -1,6 +1,6 @@
 # Your Code Here
 def map(array)
-  modified_array = []
+  modified_array = [] # [1, 2, 3, -9]
   
   for element in array do
     modified_array << yield(element)
@@ -11,13 +11,13 @@ end
 
 # p map([1, 2, 3, -9]){|n| n * -1}
 
-def reduce(array, value = nil)
-  if value
-    accumulator = value
+def reduce(array, starting_value = nil)
+  accumulator = array[0]
+  i = 1
+    
+  if starting_value
+    accumulator = starting_value
     i = 0
-  elsif !value
-    accumulator = array[0]
-    i = 1
   end
   
   while i < array.length do
@@ -29,11 +29,12 @@ def reduce(array, value = nil)
   return accumulator
 end
 
-# source_array = [1,2,3]
+source_array = [1,2,3]
+reduce(source_array){|memo, n| p memo + n} #=> 6
+
 # starting_point = 100
-# p reduce(source_array){|memo, n| memo + n} #=> 6
 
   # it "returns true when a truthy value is present" do
-source_array = [ false, nil, nil, nil, true]
-reduce(source_array){|memo, n| p (memo || n)}
+# source_array = [ false, nil, nil, nil, true]
+# reduce(source_array){|memo, n| p (memo || n)}
   # end
